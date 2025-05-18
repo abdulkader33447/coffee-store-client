@@ -32,7 +32,7 @@ const SignUp = () => {
         console.log(result);
 
         // save profile in the db
-        fetch("http://localhost:3000/users", {
+        fetch("https://coffee-store-app-50954.web.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

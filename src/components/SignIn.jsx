@@ -22,17 +22,17 @@ const SignIn = () => {
         };
 
         // update last sign in to the db
-        fetch("http://localhost:3000/users",{
-          method:"PATCH",
-          headers:{
-            'content-type':'application/json'
+        fetch("https://coffee-store-app-50954.web.app/users", {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
           },
-          body:JSON.stringify(signInInfo)
+          body: JSON.stringify(signInInfo),
         })
-        .then(res => res.json())
-        .then(data =>{
-          console.log("after update patch",data);
-        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("after update patch", data);
+          });
       })
       .catch((error) => {
         console.log(error);

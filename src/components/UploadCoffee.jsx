@@ -15,7 +15,7 @@ const UploadCoffee = () => {
     console.log(updatedCoffee);
 
     // send updated coffee to db
-    fetch(`http://localhost:3000/coffees/${_id}`, {
+    fetch(`https://coffee-store-app-50954.web.app/coffees/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("http://localhost:3000/coffees"),
+        loader: () => fetch("https://coffee-store-app-50954.web.app/coffees"),
         hydrateFallbackElement: <p>coffee is loading......</p>,
         Component: Home,
       },
@@ -31,14 +31,14 @@ const router = createBrowserRouter([
       {
         path: `/coffee/:id`,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/coffees/${params.id}`),
+          fetch(`https://coffee-store-app-50954.web.app/coffees/${params.id}`),
         hydrateFallbackElement: <p>coffee data is loading......</p>,
         Component: CoffeeDetails,
       },
       {
         path: "/updateCoffee/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/coffees/${params.id}`),
+          fetch(`https://coffee-store-app-50954.web.app/coffees/${params.id}`),
         hydrateFallbackElement: <p>coffee data is loading......</p>,
         Component: UploadCoffee,
       },
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/users",
-        loader: () => fetch("http://localhost:3000/users"),
+        loader: () => fetch("https://coffee-store-app-50954.web.app/users"),
         hydrateFallbackElement: <p>coffee is loading......</p>,
         Component: Users,
       },

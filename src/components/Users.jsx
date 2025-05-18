@@ -21,7 +21,7 @@ const Users = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/users/${id}`, {
+        fetch(`https://coffee-store-app-50954.web.app/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -76,7 +76,8 @@ const Users = () => {
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle h-12 w-12">
-                        <img className="rounded-full"
+                        <img
+                          className="rounded-full"
                           src={user.photo}
                           alt="Avatar Tailwind CSS Component"
                         />

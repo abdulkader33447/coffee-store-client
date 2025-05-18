@@ -4,7 +4,7 @@ import { MdDelete, MdEdit } from "react-icons/md";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
-const CoffeeCard = ({ coffee,coffees,setCoffees }) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   const { _id, photo, name, price, barista } = coffee;
 
   const handleDelete = (_id) => {
@@ -21,7 +21,7 @@ const CoffeeCard = ({ coffee,coffees,setCoffees }) => {
       // console.log(result.isConfirmed);
       if (result.isConfirmed) {
         // start deleting the coffee
-        fetch(`http://localhost:3000/coffees/${_id}`, {
+        fetch(`https://coffee-store-app-50954.web.app/coffees/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -34,8 +34,8 @@ const CoffeeCard = ({ coffee,coffees,setCoffees }) => {
                 icon: "success",
               });
               // remove the coffee from the state
-              const remainingCoffees = coffees.filter(cof => cof._id !== _id)
-              setCoffees(remainingCoffees)
+              const remainingCoffees = coffees.filter((cof) => cof._id !== _id);
+              setCoffees(remainingCoffees);
             }
           });
       }
@@ -64,14 +64,14 @@ const CoffeeCard = ({ coffee,coffees,setCoffees }) => {
           <div className="card-actions justify-end">
             <div className="join join-vertical gap-2">
               <Link to={`/coffee/${_id}`}>
-              <button className="btn bg-[#D2B48C] text-white rounded-md join-item w-fit">
-                <IoMdEye size={20} />
-              </button>
+                <button className="btn bg-[#D2B48C] text-white rounded-md join-item w-fit">
+                  <IoMdEye size={20} />
+                </button>
               </Link>
               <Link to={`/updateCoffee/${_id}`}>
-              <button className="btn bg-[#3C393B] text-white rounded-md join-item w-fit">
-                <MdEdit size={20} />
-              </button>
+                <button className="btn bg-[#3C393B] text-white rounded-md join-item w-fit">
+                  <MdEdit size={20} />
+                </button>
               </Link>
               <button
                 onClick={() => handleDelete(_id)}

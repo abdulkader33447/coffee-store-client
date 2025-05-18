@@ -11,7 +11,7 @@ const AddCoffee = () => {
     console.log(newCoffee);
 
     // send coffee data to the db
-    fetch("http://localhost:3000/coffees", {
+    fetch("https://coffee-store-app-50954.web.app/coffees", {
       method: "POST",
       headers: {
         "content-type": "application/json",
